@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Speaker
+comment1.params=speakerID\ name\ bio
+comment1.target=Speaker(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getBio()
+comment3.params=
+comment3.target=java.lang.String\ getSpeakerID()
+comment4.params=speakerID
+comment4.target=void\ setSpeakerID(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getName()
+comment6.params=name
+comment6.target=void\ setName(java.lang.String)
+comment7.params=
+comment7.target=java.lang.String\ getBiography()
+comment8.params=bio
+comment8.target=void\ setBiography(java.lang.String)
+numComments=9
