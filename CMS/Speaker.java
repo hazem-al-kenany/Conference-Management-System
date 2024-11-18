@@ -1,11 +1,12 @@
-public class Speaker {
+public class Speaker extends Person{
     private String speakerID;
     private String name;
     private String bio;
+    private String email;
 
-    public Speaker(String speakerID, String name, String bio) {
+    public Speaker(String speakerID, String name, String email, String bio) {
+        super(name, email); //call parent class constructor (Person)
         this.speakerID = speakerID;
-        this.name = name;
         this.bio = bio;
     }
 

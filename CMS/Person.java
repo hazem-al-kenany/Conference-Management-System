@@ -1,33 +1,24 @@
+import java.io.Serializable;
 
-/**
- * Write a description of class Person here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Person
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public abstract class Person implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-    /**
-     * Constructor for objects of class Person
-     */
-    public Person()
-    {
-        // initialise instance variables
-        x = 0;
+    private String name;
+    private String email;
+
+    public Person(String name, String email) {
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("Name cannot be null or empty");
+        if (email == null || email.isEmpty()) throw new IllegalArgumentException("Email cannot be null or empty");
+
+        this.name = name;
+        this.email = email;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

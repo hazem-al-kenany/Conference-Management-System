@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
 
-public class Attendee implements Serializable {
+public class Attendee extends Person implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private String attendeeID;
@@ -12,9 +12,8 @@ public class Attendee implements Serializable {
     private String phoneNumber;
 
     public Attendee(String attendeeID, String name, String email, String phoneNumber) {
+        super(name, email); //call parent class constructor (Person)
         this.attendeeID = attendeeID;
-        this.name = name;
-        this.email = email;
         this.phoneNumber = phoneNumber;
         this.schedule = new ArrayList<>(); //initialize schedule as an empty list
     }
