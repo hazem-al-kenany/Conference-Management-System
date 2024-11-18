@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=CertificateManager
+comment1.params=certificateTemplate
+comment1.target=CertificateManager(java.lang.String)
+comment2.params=attendee
+comment2.target=java.lang.String\ generateCertificate(Attendee)
+comment3.params=attendee
+comment3.target=void\ sendCertificateByEmail(Attendee)
+comment4.params=
+comment4.target=java.lang.String\ getCertificateTemplate()
+comment5.params=certificateTemplate
+comment5.target=void\ setCertificateTemplate(java.lang.String)
+comment6.params=
+comment6.target=java.util.Date\ getIssueDate()
+comment7.params=issueDate
+comment7.target=void\ setIssueDate(java.util.Date)
+numComments=8

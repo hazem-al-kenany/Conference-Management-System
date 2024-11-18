@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PersistenceManager
+comment1.params=list\ fileName
+comment1.target=void\ saveToFile(java.util.List,\ java.lang.String)
+comment2.params=fileName
+comment2.target=java.util.List\ loadFromFile(java.lang.String)
+numComments=3

@@ -1,16 +1,9 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-/**
- * Write a description of class Conference here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.io.*;
 
-public class Conference
-{
-    // instance variables - replace the example below with your own
+public class Conference {
     private String conferenceID;
     private String name;
     private Date startDate;
@@ -18,12 +11,13 @@ public class Conference
     private boolean notificationsEnabled;
     private List<Session> sessions; //stores all sessions in the conference
     private List<Attendee> attendees; //stores all attendees registered for the conference
-    
-    /**
-     * Constructor for objects of class Conference
-     */
-    public Conference(String conferenceID, String name, Date startDate, Date endDate)
-    {
+
+    public Conference(String conferenceID, String name, Date startDate, Date endDate) {
+        if (conferenceID == null || conferenceID.isEmpty())
+            throw new IllegalArgumentException("Conference ID cannot be null or empty");
+        if (name == null || name.isEmpty())
+            throw new IllegalArgumentException("Conference name cannot be null or empty");
+
         this.conferenceID = conferenceID;
         this.name = name;
         this.startDate = startDate;
@@ -32,7 +26,7 @@ public class Conference
         this.sessions = new ArrayList<>();
         this.attendees = new ArrayList<>();
     }
-    
+
     //register an attendee
     public void registerAttendee(Attendee attendee) {
         attendees.add(attendee);
@@ -45,7 +39,7 @@ public class Conference
         System.out.println("Session " + session.getName() + " added successfully!");
     }
 
-    //enable notifications
+    //enable or disable notifications
     public void enableNotifications(boolean enable) {
         this.notificationsEnabled = enable;
         System.out.println("Notifications " + (enable ? "enabled" : "disabled") + " for the conference.");
@@ -54,13 +48,47 @@ public class Conference
     //placeholder to generate a report
     public void generateReport() {
         System.out.println("Generating conference report...");
-        // Future implementation
+        //future implementation
     }
 
     //placeholder to issue certificates
     public void issueCertificates() {
         System.out.println("Issuing certificates to all attendees...");
-        // Future implementation
+        //future implementation
+    }
+
+    //save attendees to a file
+    public void saveAttendees(String fileName) throws IOException {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
+            oos.writeObject(this.attendees);
+            System.out.println("Attendees saved successfully.");
+        }
+    }
+
+    // Load attendees from a file
+    @SuppressWarnings("unchecked")
+    public void loadAttendees(String fileName) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
+            this.attendees = (List<Attendee>) ois.readObject();
+            System.out.println("Attendees loaded successfully.");
+        }
+    }
+
+    //save sessions to a file
+    public void saveSessions(String fileName) throws IOException {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
+            oos.writeObject(this.sessions);
+            System.out.println("Sessions saved successfully.");
+        }
+    }
+
+    // Load sessions from a file
+    @SuppressWarnings("unchecked")
+    public void loadSessions(String fileName) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
+            this.sessions = (List<Session>) ois.readObject();
+            System.out.println("Sessions loaded successfully.");
+        }
     }
 
     //getters & setters
@@ -107,4 +135,23 @@ public class Conference
     public List<Attendee> getAttendees() {
         return attendees;
     }
+    
+    //search for a session by ID
+    public Session findSessionByID(String sessionID) {
+    for (Session session : sessions) {
+        if (session.getSessionID().equals(sessionID)) {
+            return session;
+        }
+    }
+    return null; //return null if not found
+    }
+    
+    public Attendee findAttendeeByEmail(String email) {
+    for (Attendee attendee : attendees) {
+        if (attendee.getEmail().equals(email)) {
+            return attendee;
+        }
+    }
+    return null; // Return null if not found
+}
 }
