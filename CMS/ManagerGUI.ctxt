@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=ManagerGUI
+comment1.params=conference
+comment1.target=ManagerGUI(Conference)
+comment2.params=
+comment2.target=int\ initializeSessionCounter()
+comment3.params=
+comment3.target=void\ createAndShowGUI()
+comment4.params=name
+comment4.target=boolean\ isValidName(java.lang.String)
+comment5.params=email
+comment5.target=boolean\ isValidEmail(java.lang.String)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

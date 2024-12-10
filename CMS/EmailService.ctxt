@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=EmailService
+comment1.params=senderEmail\ senderPassword
+comment1.target=EmailService(java.lang.String,\ java.lang.String)
+comment2.params=recipientEmail\ subject\ body
+comment2.target=void\ sendEmail(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment3.params=
+comment3.target=javax.mail.PasswordAuthentication\ getPasswordAuthentication()
+comment4.params=recipientEmail\ subject\ body\ attachmentPath
+comment4.target=void\ sendEmailWithAttachment(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment5.params=
+comment5.target=javax.mail.PasswordAuthentication\ getPasswordAuthentication()
+numComments=6

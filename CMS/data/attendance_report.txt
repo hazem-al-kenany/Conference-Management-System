@@ -1,0 +1,14 @@
+Attendance Report
+Report ID: REPORT-1
+Date Generated: Tue Dec 10 19:27:44 EET 2024
+--------------------------------------------------
+Session ID: S001
+Session Name: Introduction to LLMs
+Registered Attendees: 1
+Max Attendees: 50
+--------------------------------------------------
+Session ID: S002
+Session Name: Future of Quantum Computing
+Registered Attendees: 1
+Max Attendees: 30
+--------------------------------------------------

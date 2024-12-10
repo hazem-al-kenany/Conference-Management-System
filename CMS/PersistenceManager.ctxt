@@ -1,7 +1,17 @@
 #BlueJ class context
 comment0.target=PersistenceManager
-comment1.params=list\ fileName
-comment1.target=void\ saveToFile(java.util.List,\ java.lang.String)
-comment2.params=fileName
-comment2.target=java.util.List\ loadFromFile(java.lang.String)
-numComments=3
+comment1.params=newDirectory
+comment1.target=void\ setDirectory(java.lang.String)
+comment2.params=list\ fileName
+comment2.target=void\ saveToFile(java.util.List,\ java.lang.String)
+comment3.params=fileName
+comment3.target=java.util.List\ loadFromFile(java.lang.String)
+comment4.params=content\ fileName
+comment4.target=void\ saveTextToFile(java.lang.String,\ java.lang.String)
+comment5.params=fileName
+comment5.target=java.lang.String\ loadTextFromFile(java.lang.String)
+comment6.params=list\ predicate
+comment6.target=java.util.List\ search(java.util.List,\ java.util.function.Predicate)
+comment7.params=
+comment7.target=void\ ensureDirectoryExists()
+numComments=8

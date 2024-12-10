@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=AttendeeGUI
+comment1.params=conference
+comment1.target=AttendeeGUI(Conference)
+comment2.params=
+comment2.target=void\ createAndShowGUI()
+comment3.params=name
+comment3.target=boolean\ isValidName(java.lang.String)
+comment4.params=email
+comment4.target=boolean\ isValidEmail(java.lang.String)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

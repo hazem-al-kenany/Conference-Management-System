@@ -1,0 +1,24 @@
+Conference Report: GAF-AI 2025
+Conference ID: CONF001
+Dates: Tue Dec 10 23:20:00 EET 2024 - Tue Dec 10 23:20:00 EET 2024
+
+Total Attendees: 2
+Attendee Details:
+- hazem (elknanyhazem@gmail.com)
+- hazem (elknanyhazem@gmail.com)
+
+Total Sessions: 3
+Session Details:
+- Introduction to LLMs (Room: Room A)
+  Attendees: 2/50
+  Feedback:
+    - AT001: 5 stars - Great session on LLMs!
+    - AT1: 3 stars - great
+    - AT1: 3 stars - good'
+- Future of Quantum Computing (Room: Room B)
+  Attendees: 1/30
+  Feedback:
+    - AT002: 4 stars - Insightful discussion on Quantum Computing.
+- test (Room: e1)
+  Attendees: 0/50
+  No feedback available for this session.

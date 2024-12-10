@@ -2,58 +2,69 @@ import java.util.Date;
 import java.util.List;
 
 public class Report {
-    private String reportID; 
-    private Date dateGenerated;
+    private String reportID; //unique id for the report
+    private Date dateGenerated; //date when the report was generated
 
-    // Constructor
+    //constructor to initialize report with id and current date
     public Report(String reportID) {
         this.reportID = reportID;
-        this.dateGenerated = new Date(); //auto set the current date
+        this.dateGenerated = new Date(); //auto-set current date
     }
 
-    //generate feedback summary report
-    public void generateFeedbackReport(List<Feedback> feedbackList) {
-        System.out.println("Feedback Report");
-        System.out.println("Report ID: " + reportID);
-        System.out.println("Date Generated: " + dateGenerated);
-        System.out.println("--------------------------------------------------");
-        for (Feedback feedback : feedbackList) {
-            System.out.println("Attendee ID: " + feedback.getAttendeeID());
-            System.out.println("Rating: " + feedback.getRating());
-            System.out.println("Comment: " + feedback.getComment());
-            System.out.println("--------------------------------------------------");
-        }
-    }
-
-    //generate attendance summary report
-    public void generateAttendanceReport(List<Session> sessionList) {
-        System.out.println("Attendance Report");
-        System.out.println("Report ID: " + reportID);
-        System.out.println("Date Generated: " + dateGenerated);
-        System.out.println("--------------------------------------------------");
+    //generate feedback summary for all sessions
+    public void generateFeedbackReportContent(List<Session> sessionList) {
+        StringBuilder reportContent = new StringBuilder();
+        reportContent.append("Feedback Report\n");
+        reportContent.append("Report ID: ").append(reportID).append("\n");
+        reportContent.append("Date Generated: ").append(dateGenerated).append("\n");
+        reportContent.append("--------------------------------------------------\n");
+    
         for (Session session : sessionList) {
-            System.out.println("Session ID: " + session.getSessionID());
-            System.out.println("Session Name: " + session.getName());
-            System.out.println("Registered Attendees: " + session.getAttendees().size());
-            System.out.println("Max Attendees: " + session.getMaxAttendees());
-            System.out.println("--------------------------------------------------");
+            reportContent.append("Session ID: ").append(session.getSessionID()).append("\n");
+            reportContent.append("Session Name: ").append(session.getName()).append("\n");
+    
+            if (session.getFeedbackList().isEmpty()) { //check if feedback exists
+                reportContent.append("No feedback available for this session.\n");
+            } else {
+                reportContent.append("Feedback:\n");
+                for (Feedback feedback : session.getFeedbackList()) { //iterate through feedback
+                    reportContent.append("- Attendee ID: ").append(feedback.getAttendeeID()).append("\n");
+                    reportContent.append("  Rating: ").append(feedback.getRating()).append("\n");
+                    reportContent.append("  Comment: ").append(feedback.getComment()).append("\n");
+                }
+            }
+            reportContent.append("--------------------------------------------------\n");
         }
+    
+        System.out.println(reportContent.toString()); //print report to console
     }
 
-    //getters & setters
+    //generate attendance summary for all sessions
+    public String generateAttendanceReportContent(List<Session> sessionList) {
+        StringBuilder reportContent = new StringBuilder();
+        reportContent.append("Attendance Report\n");
+        reportContent.append("Report ID: ").append(reportID).append("\n");
+        reportContent.append("Date Generated: ").append(dateGenerated).append("\n");
+        reportContent.append("--------------------------------------------------\n");
+
+        for (Session session : sessionList) {
+            reportContent.append("Session ID: ").append(session.getSessionID()).append("\n");
+            reportContent.append("Session Name: ").append(session.getName()).append("\n");
+            reportContent.append("Registered Attendees: ").append(session.getAttendees().size()).append("\n");
+            reportContent.append("Max Attendees: ").append(session.getMaxAttendees()).append("\n");
+            reportContent.append("--------------------------------------------------\n");
+        }
+
+        return reportContent.toString(); //return the attendance report as a string
+    }
+
+    //getter for report id
     public String getReportID() {
         return reportID;
     }
 
-    public void setReportID(String reportID) {
-        this.reportID = reportID;
-    }
-
+    //getter for the date report was generated
     public Date getDateGenerated() {
         return dateGenerated;
-    }
-
-    public void setDateGenerated(Date dateGenerated) {
-        this.dateGenerated = dateGenerated;
     }
 }
